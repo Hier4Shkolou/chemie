@@ -1,0 +1,200 @@
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Arial;
+scroll-behavior:smooth;
+}
+
+body{
+background:#0a0a0a;
+color:white;
+overflow-x:hidden;
+}
+
+/* Hintergrund Animation */
+
+.background{
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+z-index:-1;
+overflow:hidden;
+}
+
+.circle{
+position:absolute;
+width:400px;
+height:400px;
+background:rgba(255,255,255,0.05);
+border-radius:50%;
+animation:move 20s infinite linear;
+}
+
+.circle:nth-child(1){
+top:10%;
+left:10%;
+}
+
+.circle:nth-child(2){
+top:60%;
+left:70%;
+animation-duration:25s;
+}
+
+.circle:nth-child(3){
+top:80%;
+left:20%;
+animation-duration:30s;
+}
+
+@keyframes move{
+
+0%{transform:translateY(0px);}
+50%{transform:translateY(-100px);}
+100%{transform:translateY(0px);}
+
+}
+
+
+/* NAVBAR */
+
+nav{
+position:fixed;
+top:0;
+width:100%;
+display:flex;
+justify-content:space-between;
+padding:20px 60px;
+background:rgba(0,0,0,0.8);
+backdrop-filter:blur(10px);
+z-index:100;
+}
+
+nav ul{
+display:flex;
+gap:30px;
+list-style:none;
+}
+
+nav a{
+color:white;
+text-decoration:none;
+opacity:0.7;
+}
+
+nav a:hover{
+opacity:1;
+}
+
+
+/* HEADER */
+
+header{
+height:100vh;
+display:flex;
+flex-direction:column;
+justify-content:center;
+align-items:center;
+text-align:center;
+}
+
+header h1{
+font-size:70px;
+margin-bottom:20px;
+}
+
+
+/* SPLIT LAYOUT */
+
+.split{
+display:flex;
+align-items:center;
+justify-content:space-between;
+padding:120px 10%;
+gap:60px;
+}
+
+.text{
+flex:1;
+}
+
+.text h2{
+font-size:40px;
+margin-bottom:20px;
+}
+
+.image{
+flex:1;
+}
+
+.image img{
+width:100%;
+border-radius:10px;
+}
+
+
+/* MATERIAL GRID */
+
+.materials{
+padding:120px 10%;
+text-align:center;
+}
+
+.grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:30px;
+margin-top:40px;
+}
+
+.card{
+background:#111;
+padding:30px;
+border-radius:10px;
+border:1px solid #222;
+transition:0.3s;
+}
+
+.card:hover{
+transform:translateY(-10px);
+border:1px solid #555;
+}
+
+
+/* FOOTER */
+
+footer{
+text-align:center;
+padding:60px;
+opacity:0.6;
+}
+
+
+/* PROGRESSBAR */
+
+.progress-bar{
+position:fixed;
+top:0;
+left:0;
+height:4px;
+background:white;
+width:0%;
+z-index:200;
+}
+
+
+/* Scroll Animation */
+
+.hidden{
+opacity:0;
+transform:translateY(40px);
+transition:1s;
+}
+
+.show{
+opacity:1;
+transform:translateY(0);
+}
